@@ -8,13 +8,7 @@ public class DummyDialogueTrigger : MonoBehaviour
 
     void Start()
     {
-        Invoke("Poop", 3f);
-        Invoke("SetDialogue", 7f);
-    }
-
-    void Poop()
-    {
-        PublicVars.SetFlag(PublicVars.Flag.DoorIsLocked);
+        Invoke("SetDialogue", 5f);
     }
 
     void SetDialogue()
