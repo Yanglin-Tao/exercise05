@@ -6,6 +6,7 @@ public static class PublicVars
 {
     public enum Flag
     {
+        // Clue flags
         DoorIsLocked, FoundDoorKey,
         SafeIsLocked, FoundSafeCode,
         FireplaceIsStrange, FoundBlueprints,
