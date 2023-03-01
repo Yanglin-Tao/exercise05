@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Trapdoor : MonoBehaviour
 {   
+    public bool locked = false;
+    public string sceneToDropInto;
+    public float sceneLoadTime = 2f;
     public float fallTimer;
+    public Transform pivotPoint;
+    public int rotateSpeed = 200;
     private float currentTimer;
     private bool playerFall;
+    private bool falling = false;
 
     // Renderer used to show timer
     // Renderer renderer;
@@ -20,8 +27,18 @@ public class Trapdoor : MonoBehaviour
     }
 
     void Update() {
+        // If the door is opening, rotate
+        if(falling) {
+            // Rotate about the pivot point
+            transform.RotateAround(pivotPoint.position, Vector3.forward, -rotateSpeed * Time.deltaTime);
+            // Stop rotating once we rotate 90 degrees
+            if(transform.eulerAngles.z <= 270) {
+                falling = false;
+            }
+        }
+        
         // If the player is on the trapdoor, begin the timer
-        if(playerFall) {
+        if(!locked && playerFall) {
             // Update the timer
             currentTimer -= Time.deltaTime;
 
@@ -31,9 +48,20 @@ public class Trapdoor : MonoBehaviour
 
             // If the timer runs out, drop the player
             if(currentTimer <= 0f) {
-                Destroy(gameObject);
+                StartCoroutine(Drop());
             }
         }
+
+        // TODO: Add code to unlock the trapdoor if necessary
+        if(locked) {
+            // Check if trapdoor can be unlocked
+        }
+    }
+
+    IEnumerator Drop() {
+        falling = true;
+        yield return new WaitForSeconds(sceneLoadTime);
+        SceneManager.LoadScene(sceneToDropInto);
     }
 
 
