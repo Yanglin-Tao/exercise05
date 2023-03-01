@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Enemy.cs.meta
+guid: e7878237e9a9e4907a3a193f03840591
+========
+guid: a1dce252ed52d1941bd95b16015dfee9
+>>>>>>>> main:Assets/Scripts/ClueList.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

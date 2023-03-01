@@ -62,3 +62,6 @@ crashlytics-build.properties
 
 .vscode/
 
+# User settings file
+UserSettings/EditorUserSettings.asset
+UserSettings/Layout/default-2021.dwlt

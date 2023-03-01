@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Player.cs.meta
+guid: bab0e469fdf0f4fe882a8a44b9ddacb8
+========
+guid: fd1cfd17bb23b304d9b101c1d5a06408
+>>>>>>>> main:Assets/Scripts/DialogueManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
