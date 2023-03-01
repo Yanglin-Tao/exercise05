@@ -34,10 +34,10 @@ public class CharacterRenderer : MonoBehaviour
         switch (_horizDir)
         {
             case HorizDir.Left:
-                _spriteQuad.localScale = new Vector3(1, _spriteQuad.localScale.y, _spriteQuad.localScale.z);
+                _spriteQuad.localScale = new Vector3(-1, _spriteQuad.localScale.y, _spriteQuad.localScale.z);
                 break;
             case HorizDir.Right:
-                _spriteQuad.localScale = new Vector3(-1, _spriteQuad.localScale.y, _spriteQuad.localScale.z);
+                _spriteQuad.localScale = new Vector3(1, _spriteQuad.localScale.y, _spriteQuad.localScale.z);
                 break;
         }
     }
