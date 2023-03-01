@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/Player.cs.meta
-guid: bab0e469fdf0f4fe882a8a44b9ddacb8
-========
-guid: fd1cfd17bb23b304d9b101c1d5a06408
->>>>>>>> main:Assets/Scripts/DialogueManager.cs.meta
+guid: 0150a7f02ed304d2f88237aa8972a641
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
