@@ -5,11 +5,12 @@ using UnityEngine;
 public class DummyPlayerController : MonoBehaviour
 {
     Rigidbody _rigidbody;
-    public Transform _spriteTransform;
+    CharacterRenderer _charRenderer;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _charRenderer = GetComponent<CharacterRenderer>();
     }
 
     void Update()
@@ -17,13 +18,37 @@ public class DummyPlayerController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
         _rigidbody.velocity = new Vector3(horizontal, 0, vertical) * 3;
-        if (horizontal < 0)
+        UpdateSprite();
+    }
+
+    void UpdateSprite()
+    {
+        // Whether to use the walking sprite or the non-walking sprite
+        if (_rigidbody.velocity.magnitude != 0)
         {
-            _spriteTransform.localScale = new Vector3(1, 0.5f, 1);
+            _charRenderer.SetAction(CharacterRenderer.Action.Moving);
         }
-        else if (horizontal > 0)
+        else
         {
-            _spriteTransform.localScale = new Vector3(-1, 0.5f, 1);
+            _charRenderer.SetAction(CharacterRenderer.Action.Standing);
+        }
+
+        if (_rigidbody.velocity.z > 0)
+        {
+            _charRenderer.SetVerticalDirection(CharacterRenderer.VertDir.Backward);
+        }
+        if (_rigidbody.velocity.z < 0)
+        {
+            _charRenderer.SetVerticalDirection(CharacterRenderer.VertDir.Forward);
+        }
+
+        if (_rigidbody.velocity.x > 0)
+        {
+            _charRenderer.SetHorizontalDirection(CharacterRenderer.HorizDir.Right);
+        }
+        if (_rigidbody.velocity.x < 0)
+        {
+            _charRenderer.SetHorizontalDirection(CharacterRenderer.HorizDir.Left);
         }
     }
 }

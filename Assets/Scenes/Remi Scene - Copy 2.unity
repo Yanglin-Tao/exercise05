@@ -1659,7 +1659,7 @@ GameObject:
   - component: {fileID: 929966634}
   - component: {fileID: 929966633}
   m_Layer: 0
-  m_Name: Dialogue & Hint Trigger
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1729,7 +1729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367eb96d922f4d041ab84276d048025c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spriteTransform: {fileID: 1974656206}
 --- !u!54 &944539115
 Rigidbody:
   m_ObjectHideFlags: 0
