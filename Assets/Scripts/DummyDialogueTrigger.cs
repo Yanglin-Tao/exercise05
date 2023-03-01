@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class DummyDialogueTrigger : MonoBehaviour
 {
-    public Dialogue[] dialogue;
+    public Dialogue[] _dialogue;
 
     void Start()
     {
-        Invoke("SetDialogue", 5f);
+        Invoke("SetDialogue", 2f);
     }
 
     void SetDialogue()
     {
-        GameObject.FindGameObjectWithTag("UI").GetComponent<DialogueManager>().AddDialogues(dialogue);
-        PublicVars.SetFlag(PublicVars.Flag.FoundDoorKey);
+        GameObject.FindGameObjectWithTag("UI").GetComponent<DialogueManager>().AddDialogues(_dialogue);
+        PublicVars.SetFlag(PublicVars.Flag.DoorIsLocked);
     }
 }

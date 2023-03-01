@@ -60,6 +60,8 @@ public class DialogueManager : MonoBehaviour
 
     void NextDialogue()
     {
+        if (_dialogueQ.Count == 0) return;
+
         Dialogue next = _dialogueQ.Dequeue();
         _dialogueText.text = next._text;
         _dialoguePortrait.sprite = next._characterPortrait;
