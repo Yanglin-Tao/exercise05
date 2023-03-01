@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/LifeSpan.cs.meta
+guid: 9cd8e7ba48cf9490e8faf318f4bb290e
+========
+guid: 2d69e8a20f2f5814e93dd53fb36956b3
+>>>>>>>> main:Assets/Scripts/Dialogue.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
