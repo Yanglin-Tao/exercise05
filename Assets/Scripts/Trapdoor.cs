@@ -7,14 +7,16 @@ public class Trapdoor : MonoBehaviour
     public float fallTimer;
     private float currentTimer;
     private bool playerFall;
-    Renderer renderer;
+
+    // Renderer used to show timer
+    // Renderer renderer;
     void Start() {
         // Setting initial parameters
         currentTimer = fallTimer;
         playerFall = false;
 
         // Getting the render to show progression
-        renderer = GetComponent<Renderer>();
+        // renderer = GetComponent<Renderer>();
     }
 
     void Update() {
@@ -22,9 +24,10 @@ public class Trapdoor : MonoBehaviour
         if(playerFall) {
             // Update the timer
             currentTimer -= Time.deltaTime;
+
             // Update visuals
-            float ratio = currentTimer / fallTimer;
-            renderer.material.SetColor("_Color", new Color(1f - ratio, ratio, 0));
+            // float ratio = currentTimer / fallTimer;
+            // renderer.material.SetColor("_Color", new Color(1f - ratio, ratio, 0));
 
             // If the timer runs out, drop the player
             if(currentTimer <= 0f) {
@@ -45,7 +48,9 @@ public class Trapdoor : MonoBehaviour
         if(other.gameObject.CompareTag("Player")) {
             playerFall = false;
             currentTimer = fallTimer;
-            renderer.material.SetColor("_Color", new Color(0f, 1f, 0f, 1f));
+
+            // Reset renderer color
+            // renderer.material.SetColor("_Color", new Color(0f, 1f, 0f, 1f));
         }
     }
 }
