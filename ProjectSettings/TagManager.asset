@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UI
   - Transition Manager
+  - Ghost
   layers:
   - Default
   - TransparentFX
