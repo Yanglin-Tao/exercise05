@@ -81,6 +81,7 @@ public class UIManager : MonoBehaviour
         }
 
         _state = UIState.InDialogue;
+        Time.timeScale = 0;
         SetUIActivity();
     }
 

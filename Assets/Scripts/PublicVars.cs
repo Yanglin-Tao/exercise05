@@ -12,7 +12,9 @@ public static class PublicVars
         FireplaceIsStrange, FoundBlueprints,
         RoomIsBlocked, FoundHammer,
         DrawerIsLocked, FoundDrawerKey,
-        GhostIsSad, FoundGhostJournal
+        GhostIsSad, FoundGhostJournal,
+        // World flags
+        BasementBoardsRemoved
     }
 
     static List<Flag> _setFlags;
@@ -20,8 +22,7 @@ public static class PublicVars
 
     static PublicVars()
     {
-        _setFlags = new List<Flag>();
-        _newFlags = 0;
+        ResetAll();
     }
 
     public static bool CheckFlag(Flag flag)
@@ -47,6 +48,12 @@ public static class PublicVars
 
     public static void ResetNewFlagCount()
     {
+        _newFlags = 0;
+    }
+
+    public static void ResetAll()
+    {
+        _setFlags = new List<Flag>();
         _newFlags = 0;
     }
 }
