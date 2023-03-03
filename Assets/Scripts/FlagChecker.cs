@@ -12,6 +12,7 @@ public class FlagChecker : MonoBehaviour
     public FlagCheck[] _flagChecks;
     public MonoBehaviour[] _controlledBehaviours;
     public Renderer[] _controlledRenderers;
+    public Collider[] _controlledColliders;
 
     void Update()
     {
@@ -24,6 +25,11 @@ public class FlagChecker : MonoBehaviour
         foreach (Renderer re in _controlledRenderers)
         {
             re.enabled = enable;
+        }
+
+        foreach (Collider co in _controlledColliders)
+        {
+            co.enabled = enable;
         }
     }
 

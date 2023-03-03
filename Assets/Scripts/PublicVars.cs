@@ -14,14 +14,25 @@ public static class PublicVars
         DrawerIsLocked, FoundDrawerKey,
         GhostIsSad, FoundGhostJournal,
         // World flags
-        BasementBoardsRemoved
+        BasementBoardsRemoved,
+        // Dialogue flags
+        GameStartDialogue, GhostConvoDialogue,
+        // No flag
+        None
     }
+
+    static List<Flag> _nonClueFlags;
 
     static List<Flag> _setFlags;
     static int _newFlags;
 
     static PublicVars()
     {
+        _nonClueFlags = new List<Flag>();
+        _nonClueFlags.Add(Flag.BasementBoardsRemoved);
+        _nonClueFlags.Add(Flag.GameStartDialogue);
+        _nonClueFlags.Add(Flag.GhostConvoDialogue);
+        _nonClueFlags.Add(Flag.None);
         ResetAll();
     }
 
@@ -36,7 +47,10 @@ public static class PublicVars
         if (!already_set)
         {
             _setFlags.Add(flag);
-            _newFlags++;
+            if (!_nonClueFlags.Contains(flag))
+            {
+                _newFlags++;
+            }
         }
         return already_set;
     }

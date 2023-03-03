@@ -19,7 +19,7 @@ public class FlagTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && enabled)
         {
             PublicVars.SetFlag(_flagToSet);
             _dialogueManager.AddDialogues(_dialogues);

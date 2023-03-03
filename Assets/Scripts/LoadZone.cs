@@ -20,7 +20,7 @@ public class LoadZone : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && enabled)
         {
             LevelTransitions.SetFadeIn(_fadeIn);
             _transitionManager.TransitionOut(_fadeOut);
