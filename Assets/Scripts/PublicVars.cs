@@ -12,7 +12,9 @@ public static class PublicVars
         FireplaceIsStrange, FoundBlueprints,
         RoomIsBlocked, FoundHammer,
         DrawerIsLocked, FoundDrawerKey,
-        GhostIsSad, FoundGhostJournal
+        GhostIsSad, FoundGhostJournal,
+        // World flags
+        BasementBoardsRemoved
     }
 
     static List<Flag> _setFlags;
