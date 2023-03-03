@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class Trapdoor : MonoBehaviour
 {   
@@ -39,6 +40,7 @@ public class Trapdoor : MonoBehaviour
         
         // If the player is on the trapdoor, begin the timer
         if(!locked && playerFall) {
+
             // Update the timer
             currentTimer -= Time.deltaTime;
 
@@ -59,7 +61,14 @@ public class Trapdoor : MonoBehaviour
     }
 
     IEnumerator Drop() {
+        // Opening the trapdoor
         falling = true;
+
+        // Disabling the NavAgent so the player can fall
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<NavMeshAgent>().enabled = false;
+
+        // Wait to load the next scene
         yield return new WaitForSeconds(sceneLoadTime);
         SceneManager.LoadScene(sceneToDropInto);
     }
