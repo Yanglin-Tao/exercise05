@@ -6,74 +6,108 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TMP_Text _dialogueText;
-    public Image _dialoguePortrait;
-    UIManager _uiManager;
-    Queue<Dialogue> _dialogueQ;
+	public TMP_Text _dialogueText;
+	public Image _dialoguePortrait;
+	public float _timeToSkipText = 0.5f;
+	public float _secondsPerChar = 0.1f;
+	UIManager _uiManager;
+	Queue<Dialogue> _dialogueQ;
+	float _timeSinceTextStart;
+	float _timeSinceLastChar;
+	Dialogue _currentDialogue;
+	int _placeInDialogue;
 
-    void Start()
-    {
-        _dialogueQ = new Queue<Dialogue>();
-        _uiManager = GetComponent<UIManager>();
-    }
+	void Start()
+	{
+		_dialogueQ = new Queue<Dialogue>();
+		_uiManager = GetComponent<UIManager>();
+		_currentDialogue = null;
+	}
 
-    void Update()
-    {
-        ProcessInput();
-    }
+	public void AddDialogue(Dialogue dialogue)
+	{
+		_dialogueQ.Enqueue(dialogue);
+		NextDialogue();
+	}
 
-    void ProcessInput()
-    {
-        if (!Input.GetMouseButtonDown(0))
-        {
-            return;
-        }
+	public void AddDialogues(Dialogue[] dialogues)
+	{
+		foreach (Dialogue d in dialogues)
+		{
+			_dialogueQ.Enqueue(d);
+		}
+		NextDialogue();
+	}
 
-        if (!IsDialogueOpen())
-        {
-            return;
-        }
+	public bool IsDialogueOpen()
+	{
+		return _uiManager.IsState(UIManager.UIState.InDialogue);
+	}
 
-        if (_dialogueQ.Count > 0)
-        {
-            NextDialogue();
-            return;
-        }
+	void NextDialogue()
+	{
+		if (_dialogueQ.Count == 0)
+		{
+			_uiManager.OnUnpause();
+			return;
+		}
 
-        _uiManager.OnUnpause();
-    }
+		_currentDialogue = _dialogueQ.Dequeue();
+		_timeSinceLastChar = 0;
+		_timeSinceTextStart = 0;
+		_placeInDialogue = 0;
+		_dialogueText.text = "";
+		_dialoguePortrait.sprite = _currentDialogue._characterPortrait;
 
-    public void AddDialogue(Dialogue dialogue)
-    {
-        _dialogueQ.Enqueue(dialogue);
-        NextDialogue();
-    }
+		if (!IsDialogueOpen())
+		{
+			_uiManager.OnDialogue();
+		}
+	}
 
-    public void AddDialogues(Dialogue[] dialogues)
-    {
-        foreach (Dialogue d in dialogues)
-        {
-            _dialogueQ.Enqueue(d);
-        }
-        NextDialogue();
-    }
+	void Update()
+	{
+		if (IsDialogueOpen())
+		{
+			DisplayCharacters();
+			ProcessInput();
+		}
+	}
 
-    void NextDialogue()
-    {
-        if (_dialogueQ.Count == 0) return;
+	void DisplayCharacters()
+	{
+		if (_currentDialogue == null) return;
 
-        Dialogue next = _dialogueQ.Dequeue();
-        _dialogueText.text = next._text;
-        _dialoguePortrait.sprite = next._characterPortrait;
+		_timeSinceLastChar += Time.unscaledDeltaTime;
+		if (_timeSinceLastChar < _secondsPerChar) return;
+		_timeSinceLastChar -= _secondsPerChar;
 
-        if (!IsDialogueOpen())
-        {
-            _uiManager.OnDialogue();
-        }
-    }
+		if (_placeInDialogue < _currentDialogue._text.Length)
+		{
+			_placeInDialogue++;
+			_dialogueText.text = _currentDialogue._text.Substring(0, _placeInDialogue);
+			if (_placeInDialogue == _currentDialogue._text.Length)
+			{
+				_timeSinceTextStart = 0;
+			}
+		}
+	}
 
-    bool IsDialogueOpen()
-    {
-        return _uiManager.IsState(UIManager.UIState.InDialogue);
-    }
+	void ProcessInput()
+	{
+		_timeSinceTextStart += Time.unscaledDeltaTime;
+		if (!Input.GetMouseButtonDown(0)) return;
+		if (_timeSinceTextStart < _timeToSkipText) return;
+
+		if (_placeInDialogue < _currentDialogue._text.Length)
+		{
+			_placeInDialogue = _currentDialogue._text.Length;
+			_dialogueText.text = _currentDialogue._text;
+			_timeSinceTextStart = 0;
+		}
+		else
+		{
+			NextDialogue();
+		}
+	}
 }
