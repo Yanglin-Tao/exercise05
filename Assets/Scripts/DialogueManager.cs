@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
 	public TMP_Text _dialogueText;
 	public Image _dialoguePortrait;
+	public GameObject _clickToContinueObj;
 	public float _timeToSkipText = 0.5f;
 	public float _secondsPerChar = 0.1f;
 	UIManager _uiManager;
@@ -56,8 +57,9 @@ public class DialogueManager : MonoBehaviour
 		_timeSinceLastChar = 0;
 		_timeSinceTextStart = 0;
 		_placeInDialogue = 0;
-		_dialogueText.text = "";
+		_dialogueText.text = "  ";
 		_dialoguePortrait.sprite = _currentDialogue._characterPortrait;
+		_clickToContinueObj.SetActive(false);
 
 		if (!IsDialogueOpen())
 		{
@@ -71,6 +73,7 @@ public class DialogueManager : MonoBehaviour
 		{
 			DisplayCharacters();
 			ProcessInput();
+			_clickToContinueObj.SetActive(_placeInDialogue >= _currentDialogue._text.Length);
 		}
 	}
 
