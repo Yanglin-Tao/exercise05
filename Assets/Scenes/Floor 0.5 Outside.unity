@@ -5537,6 +5537,8 @@ GameObject:
   - component: {fileID: 386037343}
   - component: {fileID: 386037342}
   - component: {fileID: 386037341}
+  - component: {fileID: 386037346}
+  - component: {fileID: 386037345}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -5626,6 +5628,40 @@ Transform:
   m_Father: {fileID: 842442907}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+--- !u!114 &386037345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386037340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f6fd149dd63fb4bade93a5b5e9a03b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flagChecks: []
+  _controlledBehaviours: []
+  _controlledRenderers: []
+  _controlledColliders: []
+--- !u!114 &386037346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386037340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abca2a6ad6fe1434d9e63494834488e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flagToSet: 8
+  _dialogues:
+  - _text: I giggled the knob... It's locked.
+    _characterPortrait: {fileID: 21300000, guid: 380c2180809cb7d47a2469ae5ae5d91a, type: 3}
+  - _text: Maybe I can find a key elsewhere...
+    _characterPortrait: {fileID: 21300000, guid: 380c2180809cb7d47a2469ae5ae5d91a, type: 3}
 --- !u!224 &421755060 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 656444022673736165, guid: ccbe44c519ad52b4091e3c70f08fe20e, type: 3}
