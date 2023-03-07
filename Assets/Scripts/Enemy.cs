@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator ChasePlayer(){
         while (true){
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(3);
             _navMeshAgent.destination = player.transform.position;
         }
     }
