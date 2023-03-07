@@ -8,6 +8,7 @@ TagManager:
   - Transition Manager
   - Ghost
   - Ghoul
+  - Music Player
   layers:
   - Default
   - TransparentFX
