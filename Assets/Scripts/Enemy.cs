@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -28,7 +29,12 @@ public class Enemy : MonoBehaviour
         if(other.CompareTag("Player")){
             Explode ();
             _audioSource.PlayOneShot(laughSound);
+            Invoke("loadOutside", 5);
         }
+    }
+
+    void loadOutside(){
+        SceneManager.LoadScene("Floor 0.5 Outside");
     }
 
     void Explode () {

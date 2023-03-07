@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: dfaa504925e8e5a48b5463f6aba084d4
   - enabled: 1
+    path: Assets/Scenes/Floor 0.5 Outside.unity
+    guid: 3b254d217c6db4996a81671e6946c8e4
+  - enabled: 1
     path: Assets/Scenes/Floor 0 - Basement.unity
     guid: a9bffb4e66c3520459b24e94c249a70f
   - enabled: 1
