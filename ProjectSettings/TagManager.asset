@@ -7,6 +7,7 @@ TagManager:
   - UI
   - Transition Manager
   - Ghost
+  - Ghoul
   layers:
   - Default
   - TransparentFX

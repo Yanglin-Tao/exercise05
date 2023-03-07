@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)){
+        if (Input.GetMouseButton(0)){
             RaycastHit hit;
             if (Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)){
                 _navMeshAgent.destination = hit.point;

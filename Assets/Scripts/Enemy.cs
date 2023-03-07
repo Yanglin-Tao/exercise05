@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public AudioClip laughSound;
     AudioSource _audioSource;
 
+    public GameObject magicSparkle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +26,14 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player")){
+            Explode ();
             _audioSource.PlayOneShot(laughSound);
         }
+    }
+
+    void Explode () {
+          GameObject magic = Instantiate(magicSparkle, transform.position, Quaternion.identity);
+          magic.GetComponent<ParticleSystem>().Play();
     }
 
     IEnumerator ChasePlayer(){
