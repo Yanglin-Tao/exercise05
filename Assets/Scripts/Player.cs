@@ -24,10 +24,15 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButton(0)){
+            _navMeshAgent.enabled = true;
             RaycastHit hit;
             if (Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)){
                 _navMeshAgent.destination = hit.point;
             }
+        }
+        
+        if (!Input.GetMouseButton(0)){
+            _navMeshAgent.enabled = false;
         }
     }
 }
