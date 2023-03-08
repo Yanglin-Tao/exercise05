@@ -5,10 +5,11 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
 	AudioSource _audioSource;
+	AudioClip _currentClip;
 
 	void Start()
 	{
-		if (GameObject.FindGameObjectsWithTag("Music Player").Length > 1)
+		if (GameObject.FindGameObjectsWithTag("Music Player").Length != 1)
 		{
 			Destroy(gameObject);
 		}
@@ -19,13 +20,22 @@ public class MusicPlayer : MonoBehaviour
 
 	public void PlayNewSong(AudioClip song)
 	{
-		_audioSource.Stop();
-		_audioSource.clip = song;
-		_audioSource.Play();
+		if (!SameClip(song))
+		{
+			_audioSource.Stop();
+			_audioSource.clip = song;
+			_audioSource.Play();
+			_currentClip = song;
+		}
 	}
 
 	public void StopPlaying()
 	{
 		_audioSource.Stop();
+	}
+
+	bool SameClip(AudioClip clip)
+	{
+		return (clip == _currentClip);
 	}
 }
