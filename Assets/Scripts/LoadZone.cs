@@ -31,6 +31,7 @@ public class LoadZone : MonoBehaviour
 
     void LoadLevel()
     {
+        PublicVars.previousScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(_levelToLoad);
     }
 }
