@@ -9,7 +9,7 @@ public class MusicPlayer : MonoBehaviour
 
 	void Start()
 	{
-		if (GameObject.FindGameObjectsWithTag("Music Player").Length > 1)
+		if (GameObject.FindGameObjectsWithTag("Music Player").Length != 1)
 		{
 			Destroy(gameObject);
 		}

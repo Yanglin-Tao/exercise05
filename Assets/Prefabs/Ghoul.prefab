@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4cbd96b4ce95e7e47ba459016c6aa21a, type: 2}
+  - {fileID: 2100000, guid: db69ed7ddefff0b47979f1b06bf3ce8e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,10 +111,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteQuad: {fileID: 938115114809228334}
-  _standingForwardMat: {fileID: 2100000, guid: 4cbd96b4ce95e7e47ba459016c6aa21a, type: 2}
-  _walkingForwardMat: {fileID: 2100000, guid: 4cbd96b4ce95e7e47ba459016c6aa21a, type: 2}
-  _standingBackwardMat: {fileID: 2100000, guid: 4cbd96b4ce95e7e47ba459016c6aa21a, type: 2}
-  _walkingBackwardMat: {fileID: 2100000, guid: 4cbd96b4ce95e7e47ba459016c6aa21a, type: 2}
+  _standingMat: {fileID: 2100000, guid: db69ed7ddefff0b47979f1b06bf3ce8e, type: 2}
+  _walkingMat: {fileID: 2100000, guid: db69ed7ddefff0b47979f1b06bf3ce8e, type: 2}
+  _standingBlinkingMat: {fileID: 2100000, guid: db69ed7ddefff0b47979f1b06bf3ce8e, type: 2}
+  _walkingBlinkingMat: {fileID: 2100000, guid: db69ed7ddefff0b47979f1b06bf3ce8e, type: 2}
+  _walkingDuration: 1
+  _blinkDuration: 1
+  _blinkMinFreq: 1
+  _blinkMaxFreq: 2
 --- !u!1 &938115115765840777
 GameObject:
   m_ObjectHideFlags: 0
