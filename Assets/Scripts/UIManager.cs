@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
 	public GameObject _exitUIObj; // Exit prompt stuff
 	public GameObject _settingsUIObj; // Settings menu stuff
 	public string _menuSceneName;
+	AudioSource _audioSource;
 
 	// Internal state
 	public enum UIState { Unpaused, Journal, InDialogue, ExitPrompt, SettingsMenu };
@@ -20,7 +21,10 @@ public class UIManager : MonoBehaviour
 
 	void Start()
 	{
+		_audioSource = GetComponent<AudioSource>();
+		_audioSource.enabled = false;
 		OnUnpause();
+		_audioSource.enabled = true;
 	}
 
 	void Update()
@@ -103,6 +107,8 @@ public class UIManager : MonoBehaviour
 		_dialogueUIObj.SetActive(_state == UIState.InDialogue);
 		_exitUIObj.SetActive(_state == UIState.ExitPrompt);
 		_settingsUIObj.SetActive(_state == UIState.SettingsMenu);
+
+		_audioSource.Play();
 	}
 
 	public void ExitToMenu()
