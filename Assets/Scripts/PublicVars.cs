@@ -21,6 +21,7 @@ public static class PublicVars
         None
     }
 
+    public static string previousScene = "";
     static List<Flag> _nonClueFlags;
 
     static List<Flag> _setFlags;
