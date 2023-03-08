@@ -364,6 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laughSound: {fileID: 8300000, guid: 1e72e6a767afe4c4293637273d856af5, type: 3}
+  magicSparkle: {fileID: 0}
 --- !u!1 &938115116635148548
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +376,7 @@ GameObject:
   - component: {fileID: 938115116635148551}
   m_Layer: 0
   m_Name: Ghoul
-  m_TagString: Untagged
+  m_TagString: Ghoul
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
