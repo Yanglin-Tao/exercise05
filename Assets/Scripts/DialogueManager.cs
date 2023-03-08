@@ -9,9 +9,10 @@ public class DialogueManager : MonoBehaviour
 	public TMP_Text _dialogueText;
 	public Image _dialoguePortrait;
 	public GameObject _clickToContinueObj;
-	public float _timeToSkipText = 0.5f;
+	public float _timeToSkipText = 0.35f;
 	public float _secondsPerChar = 0.1f;
 	UIManager _uiManager;
+	AudioSource _audioSource;
 	Queue<Dialogue> _dialogueQ;
 	float _timeSinceTextStart;
 	float _timeSinceLastChar;
@@ -22,6 +23,7 @@ public class DialogueManager : MonoBehaviour
 	{
 		_dialogueQ = new Queue<Dialogue>();
 		_uiManager = GetComponent<UIManager>();
+		_audioSource = GetComponent<AudioSource>();
 		_currentDialogue = null;
 	}
 
@@ -110,6 +112,7 @@ public class DialogueManager : MonoBehaviour
 		}
 		else
 		{
+			_audioSource.Play();
 			NextDialogue();
 		}
 	}
