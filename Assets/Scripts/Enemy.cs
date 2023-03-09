@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
     }
 
     void loadOutside(){
+        PublicVars.previousScene = "";
         SceneManager.LoadScene("Floor 0.5 Outside");
     }
 
