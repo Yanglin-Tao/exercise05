@@ -18,10 +18,14 @@ public class PlayerSpawner : MonoBehaviour
     public PlayerSpawn[] playerSpawns;
     public float cameraOffsetY;
     public float cameraOffsetZ;
+    public AudioClip walkEffect;
     void Awake() {
         // Check if there is already a player
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if(player != null) { return; }
+        if(player != null) {
+            print("Player exists");
+            return; 
+        }
 
         // Check each potential spawnpoint
         foreach(PlayerSpawn spawn in playerSpawns) {
@@ -35,6 +39,9 @@ public class PlayerSpawner : MonoBehaviour
                     player.transform.position.y + cameraOffsetY,
                     player.transform.position.z + cameraOffsetZ
                 );
+
+                player.GetComponentInChildren<WalkingSound>().walkingEffect = walkEffect;
+
                 return;
             }
         }
