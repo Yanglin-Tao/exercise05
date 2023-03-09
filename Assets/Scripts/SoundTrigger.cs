@@ -15,15 +15,17 @@ public class SoundTrigger : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        // Check the flags
-        bool enable = CheckFlags();
+        if(other.CompareTag("Player")) {
+            // Check the flags
+            bool enable = CheckFlags();
 
-        // If enabled & valid
-        if(enable && enabledSound != null) {
-            _audioSource.PlayOneShot(enabledSound);
-        }
-        else if(!enable && disabledSound != null) { // If disabled & valid
-            _audioSource.PlayOneShot(disabledSound);
+            // If enabled & valid
+            if(enable && enabledSound != null) {
+                _audioSource.PlayOneShot(enabledSound);
+            }
+            else if(!enable && disabledSound != null) { // If disabled & valid
+                _audioSource.PlayOneShot(disabledSound);
+            }
         }
     }
 
