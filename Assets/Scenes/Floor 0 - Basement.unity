@@ -3200,7 +3200,7 @@ MonoBehaviour:
   _flagChecks:
   - _flag: 7
     _enabled: 1
-  - _flag: 6
+  - _flag: 12
     _enabled: 0
   enabledSound: {fileID: 8300000, guid: 1933b486589bb8946a6dddc38621265e, type: 3}
   disabledSound: {fileID: 0}
