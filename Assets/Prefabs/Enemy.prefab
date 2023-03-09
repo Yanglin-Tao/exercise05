@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7676437222854513901}
   - component: {fileID: 7676437222854513900}
   - component: {fileID: 1849952551567719777}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EnemyBox
   m_TagString: Ghoul
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -368,7 +368,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8fab0a5a0c5eb41428dfda28a87a5f05, type: 2}
+  - {fileID: 2100000, guid: db69ed7ddefff0b47979f1b06bf3ce8e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -430,7 +430,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteQuad: {fileID: 7676437224344626199}
-  _standingForwardMat: {fileID: 2100000, guid: 4cbd96b4ce95e7e47ba459016c6aa21a, type: 2}
-  _walkingForwardMat: {fileID: 2100000, guid: 4cbd96b4ce95e7e47ba459016c6aa21a, type: 2}
-  _standingBackwardMat: {fileID: 2100000, guid: 4cbd96b4ce95e7e47ba459016c6aa21a, type: 2}
-  _walkingBackwardMat: {fileID: 2100000, guid: 4cbd96b4ce95e7e47ba459016c6aa21a, type: 2}
+  _standingMat: {fileID: 2100000, guid: db69ed7ddefff0b47979f1b06bf3ce8e, type: 2}
+  _walkingMat: {fileID: 2100000, guid: db69ed7ddefff0b47979f1b06bf3ce8e, type: 2}
+  _standingBlinkingMat: {fileID: 2100000, guid: db69ed7ddefff0b47979f1b06bf3ce8e, type: 2}
+  _walkingBlinkingMat: {fileID: 2100000, guid: db69ed7ddefff0b47979f1b06bf3ce8e, type: 2}
+  _walkingDuration: 1
+  _blinkDuration: 1
+  _blinkMinFreq: 1
+  _blinkMaxFreq: 2
