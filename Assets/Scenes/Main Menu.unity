@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Music Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5811417116576798533, guid: 03497ca8fffaf2f409f9ad07286efdae, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5811417116576798535, guid: 03497ca8fffaf2f409f9ad07286efdae, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -646,8 +650,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 164.4, y: 225.9}
-  m_SizeDelta: {x: 661.3, y: 50}
+  m_AnchoredPosition: {x: 54.8, y: 132.8}
+  m_SizeDelta: {x: 900.2, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214084635
 MonoBehaviour:
@@ -669,7 +673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Untitled Ghost Detective Game
+  m_text: Spirit Solver
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0520032d2282e694898823c9b5df74ec, type: 2}
   m_sharedMaterial: {fileID: -7732999564481351150, guid: 0520032d2282e694898823c9b5df74ec, type: 2}
@@ -696,8 +700,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 92
-  m_fontSizeBase: 92
+  m_fontSize: 133.05
+  m_fontSizeBase: 133.05
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -757,6 +761,7 @@ GameObject:
   - component: {fileID: 1286478902}
   - component: {fileID: 1286478901}
   - component: {fileID: 1286478900}
+  - component: {fileID: 1286478903}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -831,6 +836,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1286478903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286478899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7820d9fa7eabde345ba80bf11e421d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 9b8c086f29cef4373897139044e2a4bf, type: 3}
 --- !u!1 &1453875728
 GameObject:
   m_ObjectHideFlags: 0

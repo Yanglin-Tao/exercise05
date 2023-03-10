@@ -83,7 +83,7 @@ public class DialogueManager : MonoBehaviour
 	{
 		if (_currentDialogue == null) return;
 
-		_timeSinceLastChar += Time.unscaledDeltaTime;
+		_timeSinceLastChar += Time.fixedUnscaledDeltaTime;
 		if (_timeSinceLastChar < _secondsPerChar) return;
 		_timeSinceLastChar -= _secondsPerChar;
 
@@ -100,7 +100,7 @@ public class DialogueManager : MonoBehaviour
 
 	void ProcessInput()
 	{
-		_timeSinceTextStart += Time.unscaledDeltaTime;
+		_timeSinceTextStart += Time.fixedUnscaledDeltaTime;
 		if (!Input.GetMouseButtonDown(0)) return;
 		if (_timeSinceTextStart < _timeToSkipText) return;
 

@@ -77,5 +77,7 @@ public static class PublicVars
 	{
 		_setFlags = new List<Flag>();
 		_newFlags = 0;
+		_totalFlags = 0;
+		previousScene = "";
 	}
 }

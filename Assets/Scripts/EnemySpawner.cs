@@ -28,17 +28,17 @@ public class EnemySpawner : MonoBehaviour
 		int existing_enemies = GameObject.FindGameObjectsWithTag("Ghoul").Length / 2;
 		// print(existing_enemies);
 
-		if (num == 2 && existing_enemies < 1)
+		if (num == 6 && existing_enemies < 1)
 		{
 			enemiesToSpawn = 1;
 			toSpawn = true;
 		};
-		if (num >= 3 && num <= 6 && existing_enemies < 2)
+		if (num >= 7 && num <= 10 && existing_enemies < 2)
 		{
 			enemiesToSpawn = 2;
 			toSpawn = true;
 		};
-		if (num >= 7 && existing_enemies < 3)
+		if (num >= 11 && existing_enemies < 3)
 		{
 			enemiesToSpawn = 3;
 			toSpawn = true;

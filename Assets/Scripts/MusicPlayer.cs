@@ -20,7 +20,14 @@ public class MusicPlayer : MonoBehaviour
 
 	public void PlayNewSong(AudioClip song)
 	{
-		if (!SameClip(song))
+		if (song == null)
+		{
+			_currentClip = null;
+			StopPlaying();
+			return;
+		}
+
+		if (_currentClip == null || !SameClip(song))
 		{
 			_audioSource.Stop();
 			_audioSource.clip = song;

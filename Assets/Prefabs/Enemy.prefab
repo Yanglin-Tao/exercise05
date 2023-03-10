@@ -113,7 +113,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0150a7f02ed304d2f88237aa8972a641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laughSound: {fileID: 8300000, guid: 1e72e6a767afe4c4293637273d856af5, type: 3}
+  laughSound: {fileID: 8300000, guid: 617e363898583db45869ca30285d3f23, type: 3}
   magicSparkle: {fileID: 1184855122511978422, guid: 9fb7ea12e19a74904878b44bbef40f0d, type: 3}
 --- !u!82 &7676437222854513900
 AudioSource:
@@ -164,7 +164,7 @@ AudioSource:
   m_GameObject: {fileID: 7676437222854513684}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2710062247772464652, guid: ab4dcf6eef2c92c4da69b7671cd940a1, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.1
